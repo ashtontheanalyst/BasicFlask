@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <!-- Basic webpage setup -->
+    <!-- The block (called 'content' below) allows us to make another page exactly
+    the same as this one, but change the content shown, 
+    saves us time not having to make a ton of different pages individually -->
+    <div>
+        {% block content %}
+        <h1>Home page for now...</h1>
+        <p>Hello, {{name}}!</p>
+        {% endblock %}
+    </div>
+
+    <!-- This is how to implement java script files onto your web page: -->
+    <!-- It's pulling the index.js file from our static folder -->
+    <script
+        type="text/javascript"
+        src="{{url_for('static', filename='index.js')}}"
+    ></script>
+</body>
+</html>
