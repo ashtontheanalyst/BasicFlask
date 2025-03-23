@@ -1,0 +1,4 @@
+# This file lists the dependencies for the application
+# As a new package is needed, list the name of it in succession
+
+Flask
