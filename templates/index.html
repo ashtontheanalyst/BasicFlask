@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>{% block title %}BCDC Drone Tracker{% endblock %}</title>
+    <style>
+        /* Basic styling for the header */
+        .header {
+            background-color: #213D57;
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start; /* Aligns content to the right */
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-title {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px; /* Space between title and buttons */
+        }
+
+        .header button {
+            background-color: #475F76;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 15px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .header button:hover {
+            background-color: #C6D1D8;
+        }
+    </style>
 </head>
 <body>
-    <!-- Basic webpage setup -->
-    <!-- The block (called 'content' below) allows us to make another page exactly
-    the same as this one, but change the content shown, 
-    saves us time not having to make a ton of different pages individually -->
+
+    <!-- Header Navigation Bar -->
+    <div class="header">
+        <div class="nav-title">BCDC Drone Tracker</div>  <!-- Title on the right side -->
+        <button onclick="location.href='/'">Home</button>
+        <button onclick="location.href='/data'">JSON Display Test</button>
+        <button onclick="location.href='/inputting'">User Input Test</button>
+    </div>
+
+    <!-- Page-Specific Content -->
     <div>
         {% block content %}
-        <h1>Home page for now...</h1>
-        <p>Hello, {{name}}!</p>
+            <h1>Welcome to the BCDC Drone Tracker</h1>
+            <p>This is in conjunction with CROW ARI</p>
         {% endblock %}
     </div>
 
-    <!-- This is how to implement java script files onto your web page: -->
-    <!-- It's pulling the index.js file from our static folder -->
-    <script
-        type="text/javascript"
-        src="{{url_for('static', filename='index.js')}}"
-    ></script>
 </body>
 </html>
