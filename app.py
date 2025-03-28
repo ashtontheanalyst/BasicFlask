@@ -2,12 +2,12 @@
 
 # Initializes/creates our flask app, must be done anytime you make one
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 
 #imports views from our views file, these are our web pages
 from views import views
 app.register_blueprint(views, url_prefix="/") #sets the root
-
 
 # Basic setup to get the app running
 # 'debug=True' is nice because it lets the app refresh with new code each time
